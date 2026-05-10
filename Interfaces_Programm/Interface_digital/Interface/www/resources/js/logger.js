@@ -1,5 +1,6 @@
 
 // logging time and input for tab changes and tasks
+// time is tracked correctly in csv but sometimes, where the needed seconds should be, a date is displayed instead
 
 // time format
 function formatTime(timestamp) {
