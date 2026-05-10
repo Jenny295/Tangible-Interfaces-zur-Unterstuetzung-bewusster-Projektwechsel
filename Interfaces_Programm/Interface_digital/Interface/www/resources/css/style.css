@@ -1,0 +1,220 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+
+/* tabs */
+
+.tabs {
+    display: flex;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #bbb;
+}
+
+.tab-button.active {
+    background-color: #333;
+    color: white;
+}
+
+
+
+.tab-content {
+    display: none;
+    padding: 40px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+
+/* tab1 input */
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 700px;
+}
+
+#input-container input {
+    padding: 6px 8px;
+    font-size: 13px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* Headings */
+h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* tab2 bubbles */
+
+#bubble-container {
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    padding: 0; /* WICHTIG */
+    margin: 0;  /* WICHTIG */
+}
+
+.bubble {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: lightblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+/* tab3 notifications */
+
+.notification {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #f5f5f5;
+}
+
+.notification button {
+    margin-right: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.notification input {
+    margin-top: 8px;
+    padding: 6px;
+    font-size: 13px;
+}
+
+.notification.error {
+    background-color: #ffb3b3;
+    border: 1px solid red;
+}
+
+
+/* global overlay */
+
+#global-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+#global-notification .box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 320px;
+}
+
+#global-notification button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+
+/* done button */
+
+#doneButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    padding: 15px 25px;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: gray;
+    color: white;
+
+    cursor: not-allowed;
+    transition: 0.3s;
+}
+
+#doneButton.enabled {
+    background-color: green;
+    cursor: pointer;
+}
+
+
+/* tab3 */
+
+.badge {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.hidden {
+    display: none;
+}
