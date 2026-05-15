@@ -4,11 +4,12 @@
 import { createNotification, notificationWrong, notificationCorrect } from "./logger.js";
 
 const container = document.getElementById("notification-container");
-
 const badge = document.getElementById("tab3-badge");
+const doneText = document.getElementById("tab3-placeholder");
 
 let openTasks = 0;
 let current = 0;
+let specialTask = 1;
 
 
 // standard tasks
@@ -74,6 +75,7 @@ window.addEventListener(
                 );
                 box.remove();
                 resolveTask();
+                specialTask--;
 
                 checkNotificationsFinished();
 
@@ -222,5 +224,10 @@ function renderNotification() {
 function checkNotificationsFinished() {
     if (current >= notifications.length && openTasks === 0) {
         window.dispatchEvent(new CustomEvent("notificationsFinished"));
+
+        if (specialTask === 0) {
+            doneText.textContent = "Aufgaben erledigt";
+        }
+
     }
 }

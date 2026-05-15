@@ -39,8 +39,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // description for input fields
-    const food = createGroup("Essenssachen");
-    const colors = createGroup("Farben");
+    const food = createGroup("Tragen Sie 10 verschiedene Farben in die Lücken ein:");
+    const colors = createGroup("Tragen Sie 10 verschieden Lebensmittel in die Lücken ein:");
 
 
     // creates a single tracked input field
@@ -114,13 +114,13 @@ window.addEventListener("DOMContentLoaded", () => {
     // generate input fields
     for (let i = 0; i < 10; i++) {
         food.appendChild(
-            createInput(`Food ${i + 1}`)
+            createInput(`...`)
         );
     }
 
     for (let i = 0; i < 10; i++) {
         colors.appendChild(
-            createInput(`Color ${i + 11}`)
+            createInput(`...`)
         );
     }
 
