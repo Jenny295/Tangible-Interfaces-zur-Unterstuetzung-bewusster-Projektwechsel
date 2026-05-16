@@ -11,13 +11,10 @@ window.addEventListener("DOMContentLoaded", () => {
     let index = 0;
     const total = 10;
     let started = false;
+    let firstClickLogged = false;
 
     // start task when tab2 begins
     window.addEventListener("tab2Start", () => {
-        logEvent("tab2_task_started", {
-            totalBubbles: total
-        });
-
         if (started) return;
         started = true;
         spawn();
@@ -61,6 +58,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // click increases progress and respawns bubble
         bubble.addEventListener("click", () => {
+            if (!firstClickLogged) {
+                firstClickLogged = true;
+
+                logEvent("tab2_task_started", {
+                    totalBubbles: total,
+                    trigger: "first_bubble_click"
+                });
+            }
             index++;
             spawn();
         });
