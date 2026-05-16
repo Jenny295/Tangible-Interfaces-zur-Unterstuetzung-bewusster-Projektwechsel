@@ -1,7 +1,6 @@
 
 import { logInput } from "./logger.js";
 
-
 // creates input fields, tracks user interaction and progress,
 // triggers experiment events, and detects when all inputs are completed.
 
@@ -50,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         input.dataset.started = "false";
 
-        let hasLogged = false;
+        let lastValue = "";
 
         // first interaction: counts progression + triggers events
         input.addEventListener("focus", () => {
@@ -90,16 +89,15 @@ window.addEventListener("DOMContentLoaded", () => {
         // logs final value
         input.addEventListener("blur", () => {
             const value = input.value.trim();
-
             if (value === "") return;
 
-            if (!hasLogged) {
+            if (value !== lastValue) {
                 logInput(
                     label,
                     value,
                     window.currentGapIndex
                 );
-                hasLogged = true;
+                lastValue = value;
             }
         });
 
@@ -114,13 +112,13 @@ window.addEventListener("DOMContentLoaded", () => {
     // generate input fields
     for (let i = 0; i < 10; i++) {
         food.appendChild(
-            createInput(`...`)
+            createInput(`Farbe ${i + 1}`)
         );
     }
 
     for (let i = 0; i < 10; i++) {
         colors.appendChild(
-            createInput(`...`)
+            createInput(`Lebensmittel ${i + 1}`)
         );
     }
 
