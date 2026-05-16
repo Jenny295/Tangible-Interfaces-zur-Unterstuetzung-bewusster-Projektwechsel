@@ -1,24 +1,28 @@
 
 // logging time and input for tab changes and tasks
+// time is tracked correctly in csv but sometimes, where the needed seconds should be, a date is displayed instead
 
 // time format
 function formatTime(timestamp) {
-    return new Date(timestamp).toLocaleString("de-DE", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-    });
+
+    const date = new Date(Number(timestamp))
+
+    return (
+        String(date.getHours()).padStart(2, "0") + ":" +
+        String(date.getMinutes()).padStart(2, "0") + ":" +
+        String(date.getSeconds()).padStart(2, "0")
+        )
 }
 
 
 // data
 export const experimentData = {
-    startedAt: Date.now(),
+    startedAt: new Date().getTime(),
     finishedAt: null,
     totalDurationMs: null,
 
     currentTab: "tab1",
-    tabEnteredAt: Date.now(),
+    tabEnteredAt: new Date().getTime(),
     tabTimes: [],
     tabSwitches: [],
 
@@ -33,7 +37,7 @@ export const experimentData = {
 export function logEvent(type, data = {}) {
     experimentData.events.push({
         type,
-        timestamp: Date.now(),
+        timestamp: new Date().getTime(),
         ...data
     });
 }
@@ -41,7 +45,7 @@ export function logEvent(type, data = {}) {
 
 // tracks tab switches
 export function trackTabSwitch(newTab) {
-    const now = Date.now();
+    const now = new Date().getTime();
 
     experimentData.tabTimes.push({
         tab: experimentData.currentTab,
@@ -70,11 +74,14 @@ export function trackTabSwitch(newTab) {
 // input tracking
 export function logInput(label, value, gapIndex) {
 
+    const now = new Date().getTime();
+
     experimentData.inputs.push({
         label,
         value,
         gapIndex,
-        timestamp: Date.now()
+        timestamp: now,
+        tabEnteredAt: experimentData.tabEnteredAt
     });
 
     logEvent("input", {
@@ -88,11 +95,14 @@ export function logInput(label, value, gapIndex) {
 // tracks data tasks tab3
 export function createNotification(type, text) {
 
+    const now = new Date().getTime();
+
     const notification = {
         id: experimentData.notifications.length,
         type,
         text,
-        shownAt: Date.now(),
+        shownAt: now,
+        tabEnteredAt: experimentData.tabEnteredAt,
         answeredAt: null,
         reactionTimeMs: null,
         correct: null,
@@ -100,6 +110,13 @@ export function createNotification(type, text) {
     };
 
     experimentData.notifications.push(notification);
+
+    logEvent("notification_shown",{
+        id: notification.id,
+        type,
+        text,
+        timestamp: now
+    });
 
     return notification.id;
 }
@@ -125,7 +142,7 @@ export function notificationCorrect(notificationId) {
 
     if (!notif) return;
 
-    notif.answeredAt = Date.now();
+    notif.answeredAt = new Date().getTime();
     notif.reactionTimeMs =
         notif.answeredAt - notif.shownAt;
     notif.correct = true;
@@ -135,7 +152,7 @@ export function notificationCorrect(notificationId) {
 // tracks when finished
 export function finishExperiment() {
 
-    const now = Date.now();
+    const now = new Date().getTime();
 
     experimentData.tabTimes.push({
         tab: experimentData.currentTab,
@@ -168,7 +185,7 @@ export function downloadCSV() {
             t.tab,
             formatTime(t.enteredAt),
             formatTime(t.leftAt),
-            (t.durationMs / 1000).toFixed(2)
+            (Number(t.durationMs) / 1000).toFixed(2).replace(".", ",")
         ]);
     });
 
@@ -180,7 +197,8 @@ export function downloadCSV() {
         "FELD",
         "EINGABE",
         "POSITION",
-        "ZEIT"
+        "ZEIT",
+        "TAB_BETRETEN"
     ]);
 
     experimentData.inputs.forEach(i => {
@@ -188,19 +206,49 @@ export function downloadCSV() {
             i.label,
             i.value,
             i.gapIndex,
-            formatTime(i.timestamp)
+            formatTime(i.timestamp),
+            formatTime(i.tabEnteredAt)
         ]);
     });
 
     rows.push([]);
     rows.push([]);
 
-    // tasks
+    // tab2
+    rows.push([
+        "EVENT",
+        "Zeit",
+        "DETAILS"
+    ]);
+
+    const tab2Events = experimentData.events.filter(e =>
+        e.type.startsWith("tab2_") || e.type === "tab_switch"
+    );
+
+    tab2Events.forEach(e => {
+
+        const details = { ...e };
+        delete details.type;
+        delete details.timestamp;
+
+        rows.push([
+            e.type,
+            formatTime(e.timestamp),
+            JSON.stringify(details)
+
+        ]);
+    });
+
+    rows.push([]);
+    rows.push([]);
+
+    // tasks tab3
     rows.push([
         "ID",
         "TYP",
         "TEXT",
         "ANGEZEIGT",
+        "TAB_BETRETEN",
         "BEANTWORTET",
         "REAKTIONSZEIT_SEK",
         "RICHTIG",
@@ -214,11 +262,12 @@ export function downloadCSV() {
             n.type,
             n.text,
             formatTime(n.shownAt),
-            n.answeredAt
+            formatTime(n.tabEnteredAt),
+            n.answeredAt != null
                 ? formatTime(n.answeredAt)
                 : "-",
-            n.reactionTimeMs
-                ? (n.reactionTimeMs / 1000).toFixed(2)
+            n.reactionTimeMs != null
+                ? (Number(n.reactionTimeMs) / 1000).toFixed(2).replace(".", ",")
                 : "-",
             n.correct,
             n.wrongClicks
@@ -231,7 +280,7 @@ export function downloadCSV() {
     // summary
     rows.push([
         "GESAMTDAUER_SEKUNDEN",
-        (experimentData.totalDurationMs / 1000).toFixed(2)
+        (Number(experimentData.totalDurationMs) / 1000).toFixed(2).replace(".", ",")
     ]);
 
     rows.push([

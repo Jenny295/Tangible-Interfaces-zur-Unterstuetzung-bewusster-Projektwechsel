@@ -1,6 +1,8 @@
 
 // generates clickable bubbles, tracks user clicks, and completes the task after a set number of interactions
 
+import { logEvent } from "./logger.js";
+
 window.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("bubble-container");
     if (!container) return;
@@ -12,6 +14,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // start task when tab2 begins
     window.addEventListener("tab2Start", () => {
+        logEvent("tab2_task_started", {
+            totalBubbles: total
+        });
+
         if (started) return;
         started = true;
         spawn();
@@ -21,6 +27,10 @@ window.addEventListener("DOMContentLoaded", () => {
     function spawn() {
         // task finished
         if (index >= total) {
+            logEvent("tab2_task_finished", {
+                completedBubbles: total
+            });
+
             container.innerHTML = "";
 
             const done = document.createElement("div");

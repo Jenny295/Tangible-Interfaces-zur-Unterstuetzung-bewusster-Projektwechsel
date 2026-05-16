@@ -3,7 +3,7 @@ import { handleTabClick } from "./tabs.js";
 import "./tab1.js";
 import "./tab2.js";
 import "./notifications.js";
-import { finishExperiment, downloadCSV } from "./logger.js";
+import { finishExperiment, downloadCSV, logEvent } from "./logger.js";
 
 const buttons = document.querySelectorAll(".tab-button");
 const doneButton = document.getElementById("doneButton");
@@ -70,6 +70,8 @@ function checkDone() {
 // global overlay to inform about new event in tab2 and pop up message
 
 window.addEventListener("tab2Start", () => {
+    logEvent("tab2_notification_shown", { message: "Neue Aufgabe in Tab2 - sofort überprüfen." });
+
     showOverlay("Neue Aufgabe in Tab2 - sofort überprüfen.");
 });
 
