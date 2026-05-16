@@ -81,6 +81,7 @@ export function logInput(label, value, gapIndex) {
         value,
         gapIndex,
         timestamp: now,
+        tab: experimentData.currentTab,
         tabEnteredAt: experimentData.tabEnteredAt
     });
 
@@ -102,6 +103,7 @@ export function createNotification(type, text) {
         type,
         text,
         shownAt: now,
+        tab: experimentData.currentTab,
         tabEnteredAt: experimentData.tabEnteredAt,
         answeredAt: null,
         reactionTimeMs: null,
