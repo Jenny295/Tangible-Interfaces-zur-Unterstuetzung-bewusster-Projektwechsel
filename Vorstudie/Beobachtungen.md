@@ -18,4 +18,4 @@ in Tab2 über Artefakt gewechselt; fand die Interaktion sehr interessant und neu
   Interface wurde dann gar nicht erst bei Meldung damit angefangen sondern erst am Ende bearbeitet (genervt von Aufgabe); im tangible
   Interface erfolgte der erste Wechsel in Tab3 vor allem weil neugierig auf Aufgaben, nicht unbedingt weil direkt Impuls für Wechsel
   wegen bestehender Aufgabe war; im digital Interface wurden erst falsche Antworten in Tab1 eingegeben, da Anweisung nicht gelesen wurde
-- bei P4: 
+- bei P4: sehr vorsichtiger Umgang mit beiden Interfaces, wollte keinen Fehler machen; wurde sich daher bei beiden Interfaces sehr stark auf Aufgaben konzentriert und vorsichtig gewechselt
