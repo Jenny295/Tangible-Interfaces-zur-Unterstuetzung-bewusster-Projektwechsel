@@ -1,0 +1,50 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;17:18:48;17:19:44;56,36
+tab2;17:19:44;17:19:54;9,60
+tab1;17:19:54;17:21:00;66,02
+tab3;17:21:00;17:21:17;16,87
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Farbe 1;Blau;1;17:18:54;17:18:48
+Farbe 2;grün;2;17:18:59;17:18:48
+Farbe 3;lila;3;17:19:01;17:18:48
+Farbe 4;rosa;4;17:19:04;17:18:48
+Farbe 5;weiss;5;17:19:07;17:18:48
+Farbe 6;gelb;6;17:19:10;17:18:48
+Farbe 7;orange;7;17:19:12;17:18:48
+Farbe 8;grau;8;17:19:23;17:18:48
+Farbe 9;schwarz;9;17:19:32;17:18:48
+Farbe 10;rot;10;17:19:38;17:18:48
+Lebensmittel 1;reis;11;17:19:40;17:18:48
+Lebensmittel 2;fisch;12;17:20:01;17:19:54
+Lebensmittel 3;apfel;13;17:20:05;17:19:54
+Lebensmittel 4;mango;14;17:20:10;17:19:54
+Lebensmittel 5;tomate;15;17:20:15;17:19:54
+Lebensmittel 6;nudel;16;17:20:19;17:19:54
+Lebensmittel 7;fleisch;17;17:20:41;17:19:54
+Lebensmittel 8;salat;18;17:20:45;17:19:54
+Lebensmittel 9;bohne;19;17:20:53;17:19:54
+Lebensmittel 10;zuchini;20;17:21:00;17:19:54
+
+
+EVENT;Zeit;DETAILS
+tab2_notification_shown;17:19:40;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;17:19:44;{"from":"tab1","to":"tab2"}
+tab2_task_started;17:19:46;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;17:19:52;{"completedBubbles":10}
+tab_switch;17:19:54;{"from":"tab2","to":"tab1"}
+tab_switch;17:21:00;{"from":"tab1","to":"tab3"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;17:19:01;17:18:48;17:21:03;121,63;true;0
+1;check;Bestätigen Sie diese Meldung;17:19:10;17:18:48;17:21:04;114,28;true;0
+2;cross;Lehnen Sie diese Meldung ab;17:19:32;17:18:48;17:21:05;92,88;true;0
+3;text;Schreibe das Wort hallo;17:20:02;17:19:54;17:21:15;73,08;true;0
+4;number;Drücken Sie die Zahl 7;17:20:10;17:19:54;17:21:09;59,72;true;0
+5;check;Bestätigen Sie diese Meldung;17:20:45;17:19:54;17:21:11;26,52;true;0
+
+
+GESAMTDAUER_SEKUNDEN;148,85
+GESAMT_FEHLER;0
