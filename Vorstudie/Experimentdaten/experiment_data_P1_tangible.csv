@@ -1,0 +1,60 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;17:09:18;17:09:19;0,78
+tab1;17:09:19;17:09:32;13,72
+tab3;17:09:32;17:09:36;3,53
+tab1;17:09:36;17:10:02;26,41
+tab3;17:10:02;17:10:06;3,87
+tab1;17:10:06;17:10:14;7,39
+tab2;17:10:14;17:10:22;8,68
+tab1;17:10:22;17:10:50;27,54
+tab3;17:10:50;17:11:00;10,12
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Tiere 1;Katze;1;17:09:24;17:09:19
+Tiere 2;Bär;2;17:09:25;17:09:19
+Tiere 3;Löwe;3;17:09:28;17:09:19
+Tiere 4;Möwe;4;17:09:40;17:09:36
+Tiere 5;Jaguar;5;17:09:43;17:09:36
+Tiere 6;Tiger;6;17:09:48;17:09:36
+Tiere 7;Zebra;7;17:09:50;17:09:36
+Tiere 8;Giraffe;8;17:09:52;17:09:36
+Tiere 9;Hase;9;17:09:56;17:09:36
+Tiere 10;Hund;10;17:10:02;17:10:02
+Gegenstände 1;Tisch;11;17:10:11;17:10:06
+Gegenstände 2;Stuhl;12;17:10:29;17:10:22
+Gegenstände 3;Fenster;13;17:10:32;17:10:22
+Gegenstände 4;Stift;14;17:10:34;17:10:22
+Gegenstände 5;Radiergummi;15;17:10:36;17:10:22
+Gegenstände 6;Maus;16;17:10:38;17:10:22
+Gegenstände 7;Monitor;17;17:10:40;17:10:22
+Gegenstände 8;GPU;18;17:10:42;17:10:22
+Gegenstände 9;CPU;19;17:10:43;17:10:22
+Gegenstände 10;Festplatte;20;17:10:50;17:10:50
+
+
+EVENT;Zeit;DETAILS
+tab_switch;17:09:19;{"from":"tab1","to":"tab1"}
+tab_switch;17:09:32;{"from":"tab1","to":"tab3"}
+tab_switch;17:09:36;{"from":"tab3","to":"tab1"}
+tab_switch;17:10:02;{"from":"tab1","to":"tab3"}
+tab_switch;17:10:06;{"from":"tab3","to":"tab1"}
+tab2_notification_shown;17:10:11;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;17:10:14;{"from":"tab1","to":"tab2"}
+tab2_task_started;17:10:15;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;17:10:20;{"completedBubbles":10}
+tab_switch;17:10:22;{"from":"tab2","to":"tab1"}
+tab_switch;17:10:50;{"from":"tab1","to":"tab3"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;17:09:28;17:09:19;17:09:35;6,89;true;0
+1;check;Bestätigen Sie diese Meldung;17:09:48;17:09:36;17:10:04;15,83;true;0
+2;cross;Lehnen Sie diese Meldung ab;17:09:56;17:09:36;17:10:05;8,95;true;0
+3;text;Schreibe das Wort hallo;17:10:30;17:10:22;17:10:54;24,14;true;0
+4;number;Drücken Sie die Zahl 7;17:10:34;17:10:22;17:10:55;21,20;true;0
+5;check;Bestätigen Sie diese Meldung;17:10:42;17:10:22;17:10:57;14,47;true;0
+
+
+GESAMTDAUER_SEKUNDEN;102,05
+GESAMT_FEHLER;0

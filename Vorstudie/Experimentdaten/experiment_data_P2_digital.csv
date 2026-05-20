@@ -1,0 +1,72 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;11:26:29;11:26:40;11,09
+tab3;11:26:40;11:26:43;2,58
+tab1;11:26:43;11:26:59;16,35
+tab3;11:26:59;11:27:02;2,63
+tab1;11:27:02;11:27:31;29,89
+tab3;11:27:31;11:27:33;1,94
+tab1;11:27:33;11:27:41;7,51
+tab2;11:27:41;11:27:47;6,58
+tab1;11:27:47;11:27:59;11,67
+tab3;11:27:59;11:28:03;4,16
+tab1;11:28:03;11:28:48;45,16
+tab3;11:28:48;11:28:53;4,48
+tab1;11:28:53;11:28:55;1,55
+tab2;11:28:55;11:28:55;0,74
+tab3;11:28:55;11:28:57;1,29
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Farbe 1;Lila;1;11:26:33;11:26:29
+Farbe 2;Gelb;2;11:26:35;11:26:29
+Farbe 3;Blau;3;11:26:37;11:26:29
+Farbe 4;Grün;4;11:26:40;11:26:29
+Farbe 5;Rosa;5;11:26:48;11:26:43
+Farbe 6;Rot;6;11:26:51;11:26:43
+Farbe 7;Türkis;7;11:26:55;11:26:43
+Farbe 8;Weiß;8;11:27:06;11:27:02
+Farbe 9;Schwarz;9;11:27:11;11:27:02
+Farbe 10;Braun;10;11:27:31;11:27:02
+Lebensmittel 1;Apfel;11;11:27:38;11:27:33
+Lebensmittel 2;Banane;12;11:27:52;11:27:47
+Lebensmittel 3;Orange;13;11:27:56;11:27:47
+Lebensmittel 4;Fisch;14;11:27:59;11:27:47
+Lebensmittel 5;Brot;15;11:28:08;11:28:03
+Lebensmittel 6;Burger;16;11:28:12;11:28:03
+Lebensmittel 7;Pizza;17;11:28:14;11:28:03
+Lebensmittel 8;Pfannkuchen;18;11:28:37;11:28:03
+Lebensmittel 9;Paprika;19;11:28:46;11:28:03
+Lebensmittel 10;Gurke;20;11:28:48;11:28:03
+
+
+EVENT;Zeit;DETAILS
+tab_switch;11:26:40;{"from":"tab1","to":"tab3"}
+tab_switch;11:26:43;{"from":"tab3","to":"tab1"}
+tab_switch;11:26:59;{"from":"tab1","to":"tab3"}
+tab_switch;11:27:02;{"from":"tab3","to":"tab1"}
+tab_switch;11:27:31;{"from":"tab1","to":"tab3"}
+tab_switch;11:27:33;{"from":"tab3","to":"tab1"}
+tab2_notification_shown;11:27:38;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;11:27:41;{"from":"tab1","to":"tab2"}
+tab2_task_started;11:27:42;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;11:27:46;{"completedBubbles":10}
+tab_switch;11:27:47;{"from":"tab2","to":"tab1"}
+tab_switch;11:27:59;{"from":"tab1","to":"tab3"}
+tab_switch;11:28:03;{"from":"tab3","to":"tab1"}
+tab_switch;11:28:48;{"from":"tab1","to":"tab3"}
+tab_switch;11:28:53;{"from":"tab3","to":"tab1"}
+tab_switch;11:28:55;{"from":"tab1","to":"tab2"}
+tab_switch;11:28:55;{"from":"tab2","to":"tab3"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;11:26:37;11:26:29;11:26:42;4,54;true;0
+1;check;Bestätigen Sie diese Meldung;11:26:51;11:26:43;11:27:01;9,79;true;0
+2;cross;Lehnen Sie diese Meldung ab;11:27:11;11:27:02;11:27:33;21,92;true;0
+3;text;Schreibe das Wort hallo;11:27:56;11:27:47;11:28:02;6,30;true;0
+4;number;Drücken Sie die Zahl 7;11:28:04;11:28:03;11:28:50;46,02;true;0
+5;check;Bestätigen Sie diese Meldung;11:28:37;11:28:03;11:28:51;14,04;true;0
+
+
+GESAMTDAUER_SEKUNDEN;147,64
+GESAMT_FEHLER;0

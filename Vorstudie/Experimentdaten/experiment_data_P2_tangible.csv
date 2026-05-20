@@ -1,0 +1,54 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;11:31:47;11:32:05;18,54
+tab3;11:32:05;11:32:11;5,38
+tab1;11:32:11;11:32:56;45,23
+tab2;11:32:56;11:33:07;11,25
+tab1;11:33:07;11:33:45;37,91
+tab3;11:33:45;11:33:54;9,14
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Tiere 1;Esel;1;11:31:51;11:31:47
+Tiere 2;Affe;2;11:31:55;11:31:47
+Tiere 3;Bär;3;11:32:00;11:31:47
+Tiere 4;Hund;4;11:32:05;11:32:05
+Tiere 5;Katze;5;11:32:15;11:32:11
+Tiere 6;Maus;6;11:32:17;11:32:11
+Tiere 7;Giraffe;7;11:32:19;11:32:11
+Tiere 8;Elefant;8;11:32:22;11:32:11
+Tiere 9;Hai;9;11:32:25;11:32:11
+Tiere 10;Fisch;10;11:32:46;11:32:11
+Gegenstände 1;Tisch;11;11:32:50;11:32:11
+Gegenstände 2;Laptop;12;11:33:11;11:33:07
+Gegenstände 3;Stift;13;11:33:14;11:33:07
+Gegenstände 4;Handy;14;11:33:17;11:33:07
+Gegenstände 5;Tastatur;15;11:33:22;11:33:07
+Gegenstände 6;Stuhl;16;11:33:26;11:33:07
+Gegenstände 7;Box;17;11:33:29;11:33:07
+Gegenstände 8;Mikrofon;18;11:33:34;11:33:07
+Gegenstände 9;Fenster;19;11:33:37;11:33:07
+Gegenstände 10;Sessel;20;11:33:45;11:33:45
+
+
+EVENT;Zeit;DETAILS
+tab_switch;11:32:05;{"from":"tab1","to":"tab3"}
+tab_switch;11:32:11;{"from":"tab3","to":"tab1"}
+tab2_notification_shown;11:32:50;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;11:32:56;{"from":"tab1","to":"tab2"}
+tab2_task_started;11:32:57;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;11:33:03;{"completedBubbles":10}
+tab_switch;11:33:07;{"from":"tab2","to":"tab1"}
+tab_switch;11:33:45;{"from":"tab1","to":"tab3"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;11:32:00;11:31:47;11:32:07;6,99;true;0
+1;check;Bestätigen Sie diese Meldung;11:32:17;11:32:11;11:33:47;90,09;true;0
+2;cross;Lehnen Sie diese Meldung ab;11:32:25;11:32:11;11:33:48;83,28;true;0
+3;text;Schreibe das Wort hallo;11:33:13;11:33:07;11:33:51;38,41;true;0
+4;number;Drücken Sie die Zahl 7;11:33:17;11:33:07;11:33:52;34,84;true;0
+5;check;Bestätigen Sie diese Meldung;11:33:34;11:33:07;11:33:53;19,06;true;0
+
+
+GESAMTDAUER_SEKUNDEN;127,45
+GESAMT_FEHLER;0
