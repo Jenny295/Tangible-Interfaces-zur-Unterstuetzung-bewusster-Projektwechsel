@@ -123,6 +123,13 @@ export function createNotification(type, text) {
     return notification.id;
 }
 
+// helper for time tab switch in tab3
+function getNextTabEntry(tabName, time) {
+    return experimentData.tabTimes
+        .filter(t => t.tab === tabName)
+        .find(t => t.enteredAt > time);
+}
+
 
 // for wrong answer
 export function notificationWrong(notificationId) {
@@ -259,12 +266,16 @@ export function downloadCSV() {
 
     experimentData.notifications.forEach(n => {
 
+        const nextTabEntry = getNextTabEntry("tab3", n.shownAt);
+
         rows.push([
             n.id,
             n.type,
             n.text,
             formatTime(n.shownAt),
-            formatTime(n.tabEnteredAt),
+            nextTabEntry
+                ? formatTime(nextTabEntry.enteredAt)
+                : "-",
             n.answeredAt != null
                 ? formatTime(n.answeredAt)
                 : "-",

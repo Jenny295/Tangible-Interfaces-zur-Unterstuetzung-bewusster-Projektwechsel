@@ -29,13 +29,11 @@ window.addEventListener("tab3Task", () => {
 });
 
 
-// delay for "hallo"-task
+// "hallo"-task
 window.addEventListener("tab2Finished", () => {
-    setTimeout(() => {
-        window.dispatchEvent(
-            new CustomEvent("tab3TaskHallo")
-        );
-    }, 10000);
+    window.dispatchEvent(
+        new CustomEvent("tab3TaskHallo")
+    );
 });
 
 
