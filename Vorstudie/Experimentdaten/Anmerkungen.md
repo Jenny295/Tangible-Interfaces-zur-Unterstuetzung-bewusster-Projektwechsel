@@ -8,4 +8,4 @@ In CSV-Dateien wird bei der Interaktion mit den Interfaces gespeichert:
   gewechselt wurde, wie viel Zeit zwischen Angezeigt und Beantwortung vergangen ist und wie viele Fehler bei Beantwortung
 - Gesamtzeit, Gesamtfehler
 
-## -> bei Tab3 werden die Zeiten des vorhergehenden Tabwechsels noch falsch hinterlegt, allerdings nicht ganz so schlimm da auch alle Tabwechsel oben angezeigt werden
+-> bei Tab3 werden die Zeiten des vorhergehenden Tabwechsels noch falsch hinterlegt, allerdings nicht ganz so schlimm da auch alle Tabwechsel oben angezeigt werden -> im dev branch bereits Code gefixed
