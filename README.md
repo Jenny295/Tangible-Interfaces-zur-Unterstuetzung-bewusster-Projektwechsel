@@ -7,6 +7,13 @@ Grober Versuchsaufbau(Position Kamera/Artefakte je nach dominanter Hand auf rech
 <div style="display: flex; gap: 50px;">
 <img src="https://github.com/Jenny295/Tangible-Interfaces-zur-Unterstuetzung-bewusster-Projektwechsel/blob/ac5822326fbb00498eadcff104d0df09469130b9/Versuchsaufbau.jpg" width="250" height="200">  
 <img src="https://github.com/Jenny295/Tangible-Interfaces-zur-Unterstuetzung-bewusster-Projektwechsel/blob/ac5822326fbb00498eadcff104d0df09469130b9/Kamera_Artefakte.jpg" width="200" height="150">  
+</div>  
+
+Beispielscreenshots Interfaces:  
+<div style="display: flex; gap: 50px;">
+  <img src="https://github.com/Jenny295/Tangible-Interfaces-zur-Unterstuetzung-bewusster-Projektwechsel/blob/cbe6732eda236fb036931cff99f970b79df07cab/Vorstudie/Tab1_Beispiel.png" width="250" height="220">
+  <img src="https://github.com/Jenny295/Tangible-Interfaces-zur-Unterstuetzung-bewusster-Projektwechsel/blob/cbe6732eda236fb036931cff99f970b79df07cab/Vorstudie/Tab2_Beispiel.png" width="250" height="220">
+  <img src="https://github.com/Jenny295/Tangible-Interfaces-zur-Unterstuetzung-bewusster-Projektwechsel/blob/cbe6732eda236fb036931cff99f970b79df07cab/Vorstudie/Tab3_Beispiel.png" width="250" height="220">
 </div>
 
 Die Anwendung simuliert die typischten, existierenden Unterbrechungen (E-Mails/Nachrichten, kurze Zwangsunterbrechungen) durch Pop-ups, Benachrichtigungen und zusätzliche Aufgaben. Dabei werden automatisch Daten wie Tabwechsel, Verweildauer, Reaktionszeit und Fehler geloggt.  
