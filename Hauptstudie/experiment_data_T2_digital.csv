@@ -1,0 +1,58 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;22:58:42;22:59:40;57,97
+tab2;22:59:40;22:59:46;6,31
+tab3;22:59:46;22:59:53;6,96
+tab1;22:59:53;23:00:05;11,66
+tab3;23:00:05;23:00:07;1,71
+tab1;23:00:07;23:00:25;17,92
+tab3;23:00:25;23:00:26;1,61
+tab1;23:00:26;23:00:34;7,26
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Farbe 1;Lila;1;22:58:51;22:58:42
+Farbe 2;Gelb;2;22:58:53;22:58:42
+Farbe 3;Blau;3;22:58:56;22:58:42
+Farbe 4;Rosa;4;22:58:59;22:58:42
+Farbe 5;Türkis;5;22:59:03;22:58:42
+Farbe 6;Rot;6;22:59:08;22:58:42
+Farbe 7;Grün;7;22:59:12;22:58:42
+Farbe 8;Weiß;8;22:59:17;22:58:42
+Farbe 9;Schwarz;9;22:59:20;22:58:42
+Farbe 10;Orange;10;22:59:25;22:58:42
+Lebensmittel 1;Banane;11;22:59:31;22:58:42
+Lebensmittel 2;Apfel;12;22:59:39;22:58:42
+Lebensmittel 3;Brot;13;22:59:59;22:59:53
+Lebensmittel 4;Semmel;14;23:00:03;22:59:53
+Lebensmittel 5;Käse;15;23:00:05;22:59:53
+Lebensmittel 6;Müsli;16;23:00:14;23:00:07
+Lebensmittel 7;Limo;17;23:00:17;23:00:07
+Lebensmittel 8;Pizza;18;23:00:22;23:00:07
+Lebensmittel 9;Burger;19;23:00:25;23:00:07
+Lebensmittel 10;Wasser;20;23:00:34;23:00:26
+
+
+EVENT;Zeit;DETAILS
+tab2_notification_shown;22:59:31;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;22:59:40;{"from":"tab1","to":"tab2"}
+tab2_task_started;22:59:41;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;22:59:45;{"completedBubbles":10}
+tab_switch;22:59:46;{"from":"tab2","to":"tab3"}
+tab_switch;22:59:53;{"from":"tab3","to":"tab1"}
+tab_switch;23:00:05;{"from":"tab1","to":"tab3"}
+tab_switch;23:00:07;{"from":"tab3","to":"tab1"}
+tab_switch;23:00:25;{"from":"tab1","to":"tab3"}
+tab_switch;23:00:26;{"from":"tab3","to":"tab1"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;22:58:56;22:59:46;22:59:48;52,34;true;0
+1;check;Bestätigen Sie diese Meldung;22:59:08;22:59:46;22:59:49;40,31;true;0
+2;cross;Lehnen Sie diese Meldung ab;22:59:20;22:59:46;22:59:49;29,61;true;0
+3;text;Schreibe das Wort hallo;22:59:45;22:59:46;22:59:53;7,11;true;0
+4;number;Drücken Sie die Zahl 7;23:00:03;23:00:05;23:00:06;3,60;true;0
+5;check;Bestätigen Sie diese Meldung;23:00:22;23:00:25;23:00:26;3,56;true;0
+
+
+GESAMTDAUER_SEKUNDEN;111,40
+GESAMT_FEHLER;0

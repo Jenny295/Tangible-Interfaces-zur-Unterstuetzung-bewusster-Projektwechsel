@@ -1,0 +1,66 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;16:08:48;16:09:34;46,08
+tab3;16:09:34;16:09:38;4,66
+tab1;16:09:38;16:09:46;7,98
+tab2;16:09:46;16:09:53;6,37
+tab1;16:09:53;16:09:53;0,68
+tab3;16:09:53;16:09:57;3,48
+tab1;16:09:57;16:10:07;9,79
+tab3;16:10:07;16:10:09;2,58
+tab1;16:10:09;16:10:24;14,24
+tab3;16:10:24;16:10:25;1,94
+tab1;16:10:25;16:10:35;9,28
+tab3;16:10:35;16:10:38;3,08
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Farbe 1;Rot;1;16:08:58;16:08:48
+Farbe 2;Rosa;2;16:09:00;16:08:48
+Farbe 3;Grün;3;16:09:02;16:08:48
+Farbe 4;Flieder;4;16:09:04;16:08:48
+Farbe 5;Pink;5;16:09:06;16:08:48
+Farbe 6;Braun;6;16:09:08;16:08:48
+Farbe 7;Blau;7;16:09:10;16:08:48
+Farbe 8;Lila;8;16:09:19;16:08:48
+Farbe 9;Gelb;9;16:09:26;16:08:48
+Farbe 10;Fuchsia;10;16:09:34;16:08:48
+Lebensmittel 1;Brot;11;16:09:44;16:09:38
+Lebensmittel 2;Brokkoli;12;16:10:01;16:09:57
+Lebensmittel 3;Lauch;13;16:10:03;16:09:57
+Lebensmittel 4;Schnittlauch;14;16:10:06;16:09:57
+Lebensmittel 5;Butter;15;16:10:15;16:10:09
+Lebensmittel 6;Milch;16;16:10:17;16:10:09
+Lebensmittel 7;Hafermilch;17;16:10:20;16:10:09
+Lebensmittel 8;Haferflocken;18;16:10:23;16:10:09
+Lebensmittel 9;Toast;19;16:10:30;16:10:25
+Lebensmittel 10;Orangensaft;20;16:10:35;16:10:25
+
+
+EVENT;Zeit;DETAILS
+tab_switch;16:09:34;{"from":"tab1","to":"tab3"}
+tab_switch;16:09:38;{"from":"tab3","to":"tab1"}
+tab2_notification_shown;16:09:44;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;16:09:46;{"from":"tab1","to":"tab2"}
+tab2_task_started;16:09:47;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;16:09:52;{"completedBubbles":10}
+tab_switch;16:09:53;{"from":"tab2","to":"tab1"}
+tab_switch;16:09:53;{"from":"tab1","to":"tab3"}
+tab_switch;16:09:57;{"from":"tab3","to":"tab1"}
+tab_switch;16:10:07;{"from":"tab1","to":"tab3"}
+tab_switch;16:10:09;{"from":"tab3","to":"tab1"}
+tab_switch;16:10:24;{"from":"tab1","to":"tab3"}
+tab_switch;16:10:25;{"from":"tab3","to":"tab1"}
+tab_switch;16:10:35;{"from":"tab1","to":"tab3"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;16:09:02;16:09:34;16:09:36;33,66;true;0
+1;check;Bestätigen Sie diese Meldung;16:09:08;16:09:34;16:09:37;29,30;true;0
+2;cross;Lehnen Sie diese Meldung ab;16:09:26;16:09:34;16:09:38;11,63;true;0
+3;text;Schreibe das Wort hallo;16:09:52;16:09:53;16:10:08;16,55;true;0
+4;number;Drücken Sie die Zahl 7;16:10:10;16:10:24;16:10:25;14,42;true;0
+5;check;Bestätigen Sie diese Meldung;16:10:26;16:10:35;16:10:36;9,99;true;0
+
+
+GESAMTDAUER_SEKUNDEN;110,16
+GESAMT_FEHLER;0

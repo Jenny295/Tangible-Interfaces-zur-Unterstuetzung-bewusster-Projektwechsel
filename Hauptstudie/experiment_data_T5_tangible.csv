@@ -1,0 +1,61 @@
+TAB;BETRETEN;VERLASSEN;DAUER_SEKUNDEN
+tab1;16:26:06;16:26:52;45,95
+tab3;16:26:52;16:27:06;13,50
+tab1;16:27:06;16:27:29;23,45
+tab3;16:27:29;16:27:45;15,92
+tab1;16:27:45;16:28:00;15,02
+tab2;16:28:00;16:28:16;15,26
+tab3;16:28:16;16:28:26;10,58
+tab1;16:28:26;16:29:57;90,80
+tab3;16:29:57;16:30:07;9,83
+
+
+FELD;EINGABE;POSITION;ZEIT;TAB_BETRETEN
+Tiere 1;Katze;1;16:26:22;16:26:06
+Tiere 2;Hund;2;16:26:26;16:26:06
+Tiere 3;Pferd;3;16:26:30;16:26:06
+Tiere 4;Hamster;4;16:26:34;16:26:06
+Tiere 5;Ameise;5;16:26:38;16:26:06
+Tiere 6;Elch;6;16:26:43;16:26:06
+Tiere 7;Maus;7;16:27:13;16:27:06
+Tiere 8;Ratte;8;16:27:17;16:27:06
+Tiere 9;Löwe;9;16:27:21;16:27:06
+Tiere 10;Tiger;10;16:27:29;16:27:29
+Gegenstände 1;Tisch;11;16:27:55;16:27:45
+Gegenstände 2;Stuhl;12;16:28:33;16:28:26
+Gegenstände 3;Gabel;13;16:28:43;16:28:26
+Gegenstände 4;Messer;14;16:28:47;16:28:26
+Gegenstände 5;Kuli;15;16:29:01;16:28:26
+Gegenstände 6;Vase;16;16:29:09;16:28:26
+Gegenstände 7;Gitarre;17;16:29:14;16:28:26
+Gegenstände 8;Fe;18;16:29:18;16:28:26
+Gegenstände 8;Fenster;18;16:29:27;16:28:26
+Gegenstände 9;Handy;19;16:29:44;16:28:26
+Gegenstände 10;Stift;20;16:29:54;16:28:26
+
+
+EVENT;Zeit;DETAILS
+tab_switch;16:26:52;{"from":"tab1","to":"tab3"}
+tab_switch;16:27:06;{"from":"tab3","to":"tab1"}
+tab_switch;16:27:29;{"from":"tab1","to":"tab3"}
+tab_switch;16:27:45;{"from":"tab3","to":"tab1"}
+tab2_notification_shown;16:27:55;{"message":"Neue Aufgabe in Tab2 - sofort überprüfen."}
+tab_switch;16:28:00;{"from":"tab1","to":"tab2"}
+tab2_task_started;16:28:04;{"totalBubbles":10,"trigger":"first_bubble_click"}
+tab2_task_finished;16:28:11;{"completedBubbles":10}
+tab_switch;16:28:16;{"from":"tab2","to":"tab3"}
+tab_switch;16:28:26;{"from":"tab3","to":"tab1"}
+tab_switch;16:29:57;{"from":"tab1","to":"tab3"}
+
+
+ID;TYP;TEXT;ANGEZEIGT;TAB_BETRETEN;BEANTWORTET;REAKTIONSZEIT_SEK;RICHTIG;FEHLER
+0;number;Drücken Sie die Zahl 1;16:26:30;16:26:52;16:26:57;27,60;true;0
+1;check;Bestätigen Sie diese Meldung;16:26:43;16:26:52;16:26:59;16,32;true;0
+2;cross;Lehnen Sie diese Meldung ab;16:27:21;16:27:29;16:27:37;16,27;true;0
+3;text;Schreibe das Wort hallo;16:28:11;16:28:16;16:28:21;9,63;true;0
+4;number;Drücken Sie die Zahl 7;16:28:47;16:29:57;16:30:00;72,77;true;0
+5;check;Bestätigen Sie diese Meldung;16:29:27;16:29:57;16:30:01;33,88;true;0
+
+
+GESAMTDAUER_SEKUNDEN;240,31
+GESAMT_FEHLER;0
