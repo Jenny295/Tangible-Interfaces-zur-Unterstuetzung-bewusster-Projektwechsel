@@ -1,12 +1,9 @@
 
-
 import "./tab1.js";
 import "./tab2.js";
 import "./notifications.js";
-import { finishExperiment, downloadCSV } from "./logger.js";
-
+import { finishExperiment, downloadCSV, logEvent } from "./logger.js";
 import { startQRScanner, stopQRScanner } from "./scanner.js";
-
 
 const buttons = document.querySelectorAll(".tab-button");
 const doneButton = document.getElementById("doneButton");
@@ -19,6 +16,7 @@ let tab3Done = false;
 
 startQRScanner();
 
+// button to finish, downloads csv data (time, answers)
 doneButton.addEventListener("click", () => {
     stopQRScanner();
     finishExperiment();
@@ -27,7 +25,6 @@ doneButton.addEventListener("click", () => {
 
 
 // tracks states
-
 window.addEventListener("inputsFinished", () => {
     inputsDone = true;
     checkDone();
@@ -50,7 +47,6 @@ window.addEventListener("tab3TaskDone", () => {
 
 
 // checks if all tasks are completed and enables the done button.
-
 function checkDone() {
 
     if (inputsDone && notificationsDone && tab2Done && tab3Done) {
@@ -64,13 +60,12 @@ function checkDone() {
 
 
 // global overlay to inform about new event in tab2 and pop up message
-
 window.addEventListener("tab2Start", () => {
+    logEvent("tab2_notification_shown", { message: "Neue Aufgabe in Tab2 - sofort überprüfen." });
     showOverlay("Neue Aufgabe in Tab2 - sofort überprüfen.");
 });
 
 function showOverlay(PopUpText) {
-
     const overlay = document.createElement("div");
     overlay.id = "global-notification";
 

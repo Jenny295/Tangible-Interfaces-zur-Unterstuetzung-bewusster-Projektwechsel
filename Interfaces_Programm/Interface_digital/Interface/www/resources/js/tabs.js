@@ -5,7 +5,6 @@ const buttons = document.querySelectorAll(".tab-button");
 
 
 // handles tab changes
-
 export function handleTabClick(event) {
     const tabId = event.currentTarget.dataset.tab;
     trackTabSwitch(tabId);
