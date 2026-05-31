@@ -15,14 +15,12 @@ let tab3Done = false;
 
 
 // to switch tabs
-
 buttons.forEach(button => {
     button.addEventListener("click", handleTabClick);
 });
 
 
 // button to finish, downloads csv data (time, answers)
-
 doneButton.addEventListener("click", () => {
     finishExperiment();
     downloadCSV();
@@ -54,9 +52,7 @@ window.addEventListener("tab3TaskDone", () => {
 
 
 // checks if all tasks are completed and enables the done button.
-
 function checkDone() {
-
     if (inputsDone && notificationsDone && tab2Done && tab3Done) {
         doneButton.disabled = false;
         doneButton.classList.add("enabled");
@@ -68,15 +64,12 @@ function checkDone() {
 
 
 // global overlay to inform about new event in tab2 and pop up message
-
 window.addEventListener("tab2Start", () => {
     logEvent("tab2_notification_shown", { message: "Neue Aufgabe in Tab2 - sofort überprüfen." });
-
     showOverlay("Neue Aufgabe in Tab2 - sofort überprüfen.");
 });
 
 function showOverlay(PopUpText) {
-
     const overlay = document.createElement("div");
     overlay.id = "global-notification";
 

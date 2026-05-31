@@ -1,7 +1,6 @@
 
 import { logInput } from "./logger.js";
 
-
 // creates input fields, tracks user interaction and progress,
 // triggers experiment events, and detects when all inputs are completed.
 
@@ -39,8 +38,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // description for input fields
-    const food = createGroup("Tragen Sie 10 verschiedene Tiere in die Lücken ein:");
-    const colors = createGroup("Tragen Sie 10 verschiedene Gegenstände in die Lücken ein:");
+    const animals = createGroup("Tragen Sie 10 verschiedene Tiere in die Lücken ein:");
+    const things = createGroup("Tragen Sie 10 verschiedene Gegenstände in die Lücken ein:");
 
 
     // creates a single tracked input field

@@ -22,7 +22,7 @@ const notifications = [
 ];
 
 
-// start standard tab3 tasks
+// start standard tab3 task
 window.addEventListener("tab3Task", () => {
     addTask();
     renderNotification();
@@ -35,7 +35,6 @@ window.addEventListener("tab2Finished", () => {
         new CustomEvent("tab3TaskHallo")
     );
 });
-
 
 
 // "hallo"-task
@@ -91,8 +90,7 @@ window.addEventListener(
 );
 
 
-// badge system to tracks active open tasks
-
+// badge system to track active open tasks
 function addTask() {
     openTasks++;
 

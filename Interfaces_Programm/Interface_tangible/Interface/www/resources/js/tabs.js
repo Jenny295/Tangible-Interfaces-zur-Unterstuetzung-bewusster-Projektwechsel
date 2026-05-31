@@ -4,8 +4,8 @@ import { trackTabSwitch } from "./logger.js";
 const buttons = document.querySelectorAll(".tab-button");
 
 
+// handles tab changes
 export function activateTab(tabId) {
-
     trackTabSwitch(tabId);
 
     document.querySelectorAll(".tab-content")
