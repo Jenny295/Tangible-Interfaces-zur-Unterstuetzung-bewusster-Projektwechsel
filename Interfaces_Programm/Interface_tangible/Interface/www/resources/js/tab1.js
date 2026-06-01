@@ -38,8 +38,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // description for input fields
-    const animals = createGroup("Tragen Sie 10 verschiedene Tiere in die Lücken ein:");
-    const things = createGroup("Tragen Sie 10 verschiedene Gegenstände in die Lücken ein:");
+    const food = createGroup("Tragen Sie 10 verschiedene Tiere in die Lücken ein:");
+    const colors = createGroup("Tragen Sie 10 verschiedene Gegenstände in die Lücken ein:");
 
 
     // creates a single tracked input field
